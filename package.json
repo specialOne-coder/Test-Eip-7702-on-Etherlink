@@ -1,0 +1,23 @@
+{
+  "name": "send-7702-min",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "send": "pnpm ts-node scripts/send-7702.ts",
+    "send:correct": "pnpm ts-node scripts/send-7702-correct.ts",
+    "probe:etherlink": "pnpm ts-node scripts/probe-etherlink.ts"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0",
+    "rlp": "^3.0.0",
+    "zod": "^3.23.8",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "@types/node": "^20.14.12"
+  }
+}
+
