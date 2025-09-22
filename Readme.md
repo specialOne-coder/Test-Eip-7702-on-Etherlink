@@ -91,7 +91,7 @@ Notes
 
 ### Example commands
 
-Test eip 7702 tx
+Test eip 7702 0x04 tx on etherlink
 
 ```sh 
 ETH_RPC_URL="http://vps-43b6dfcb.vps.ovh.net/rpc/" PRIV_KEY_1= TO=0x0000000000000000000000000000000000000000 VALUE=1 GAS=800000 MAX_FEE=1500000000 MAX_PRIORITY=100000000 BROADCAST=true pnpm ts-node scripts/send-7702.ts

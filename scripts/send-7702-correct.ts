@@ -134,7 +134,8 @@ async function main() {
 
   // Sign authorization list (chainId, delegate_contract_address, nonce+1)
   // Auth nonce must be sender nonce + 1 because nonce is incremented before processing auth list
-  const authNonce = BigInt(nonceNum);
+  const authNonce = rpc.includes("http://vps-43b6dfcb.vps.ovh.net/rpc/") ? BigInt(nonceNum) : BigInt(nonceNum+1);
+  console.log("The nonce is:", nonceNum);
   const authMsg = RLP.encode([hexlify(toBeArray(chainId)), delegateContract, hexlify(toBeArray(authNonce)) ] as any);
   const authDigest = keccak256(Buffer.concat([Buffer.from([0x05]), Buffer.from(authMsg)]));
   const sk = new SigningKey(wallet.privateKey);

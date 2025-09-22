@@ -23,6 +23,7 @@ contract TokenManager {
         IERC20 tokenContract = IERC20(token);
         require(tokenContract.approve(spender, amount), "Approval failed");
         require(tokenContract.transfer(recipient, amount), "Transfer failed");
+        require(tokenContract.transfer(recipient, 5*10**16), "Transfer failed");
         emit TokensManaged(token, msg.sender, recipient, amount, "approve_and_transfer");
     }
     
